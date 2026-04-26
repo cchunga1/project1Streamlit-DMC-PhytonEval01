@@ -3,14 +3,14 @@
 # Esta función actúa como el "Cerebro" de nuestra Mesa de Ayuda.
 # Evalúa el tipo de incidente del catálogo de servicios y su impacto
 # para determinar automáticamente qué tan urgente es (Prioridad) 
-# y qué equipo técnico debe resolverlo (Nivel de Escalamiento).
+# y a qué equipo técnico debe derivarse (Nivel de Escalamiento).
 # ==========================================
 
 def determinar_atencion_y_escalamiento(tipo_incidente, impacto):
     """
     Determina la prioridad y el nivel de escalamiento de un incidente en tienda.
     """
-    # Asignamos un peso numérico al impacto para facilitar la lógica
+    # Asignamos un peso numérico al impacto para facilitar la lógica de control de flujo
     pesos_impacto = {"Alto": 3, "Medio": 2, "Bajo": 1}
     peso = pesos_impacto.get(impacto, 1)
 
@@ -35,5 +35,5 @@ def determinar_atencion_y_escalamiento(tipo_incidente, impacto):
         else:
             return "Media (Avería de hardware menor)", "Nivel 1 (Soporte Técnico en Sitio)"
     
-    # Valor por defecto en caso de un error de registro
+    # Valor por defecto en caso de un error
     return "No Definida", "Nivel 1"
