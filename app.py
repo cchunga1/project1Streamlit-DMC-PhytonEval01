@@ -10,17 +10,16 @@ from libreria_clases_proyecto1 import TicketRetail
 # ==========================================
 # CONFIGURACIÓN DE LA PÁGINA
 # ==========================================
-st.set_page_config(page_title="Portafolio ITSM Retail", layout="wide")
+st.set_page_config(page_title="Mesa de Ayuda Retail", layout="wide")
 
 # ==========================================
 # INICIALIZACIÓN DE VARIABLES DE SESIÓN
-# Vital para que los datos no se borren al interactuar con los botones.
 # ==========================================
-if 'movimientos_ej1' not in st.session_state:
-    st.session_state.movimientos_ej1 = []
+if 'caja_chica_ej1' not in st.session_state:
+    st.session_state.caja_chica_ej1 = []
 
-if 'registros_ej2' not in st.session_state:
-    st.session_state.registros_ej2 = []
+if 'repuestos_ej2' not in st.session_state:
+    st.session_state.repuestos_ej2 = []
 
 if 'historial_ej3' not in st.session_state:
     st.session_state.historial_ej3 = []
@@ -31,9 +30,9 @@ if 'inventario_ej4' not in st.session_state:
 # ==========================================
 # MENÚ DE NAVEGACIÓN
 # ==========================================
-st.sidebar.title("Menú de Sistemas")
+st.sidebar.title("Menú Help Desk")
 menu = st.sidebar.selectbox(
-    "Navegación del Módulo:",
+    "Selecciona un módulo:",
     ["Home", "Ejercicio 1", "Ejercicio 2", "Ejercicio 3", "Ejercicio 4"]
 )
 
@@ -41,104 +40,101 @@ menu = st.sidebar.selectbox(
 # SECCIÓN: HOME
 # ==========================================
 if menu == "Home":
-    st.title("🛠️ Sistema de Gestión TI y Mesa de Ayuda")
+    st.title("🎧 Portal de Mesa de Ayuda - Retail ITSM")
     st.subheader("Módulo 1 – Python Fundamentals | Especialización for Analytics")
     
     st.markdown("""
-    **Datos del Consultor / Alumno:**
+    **Datos del Estudiante / Especialista:**
     * **Nombre:** [Tu Nombre Completo]
-    * **Perfil Aplicado:** Jefe de Proyectos TI / Service Desk Manager (Retail)
+    * **Rol Simulad:** Analista de Mesa de Ayuda / Soporte N1 (Sector Retail)
     * **Año:** 2026
     
     **Descripción del Proyecto:**
-    Esta aplicación integra los conceptos de Python aplicados a un entorno real de gestión de 
-    Servicios de TI (ITSM) en el rubro Retail. 
+    Esta plataforma simula las herramientas diarias utilizadas por una Mesa de Ayuda en una empresa de Retail, 
+    aplicando los fundamentos de programación en Python:
     
-    * **Ej 1:** Gestión del presupuesto del departamento de TI (Listas).
-    * **Ej 2:** Inventario de despliegue de hardware en tiendas (NumPy y Pandas).
-    * **Ej 3:** Matriz automatizada de escalamiento de incidentes (Funciones).
-    * **Ej 4:** Plataforma CRUD para la Mesa de Ayuda (POO).
+    * **Ejercicio 1:** Control de Caja Chica para emergencias de soporte (Listas y Control de Flujo).
+    * **Ejercicio 2:** Inventario de repuestos de primera línea (NumPy y DataFrames).
+    * **Ejercicio 3:** Matriz de priorización de incidentes en tiendas (Funciones).
+    * **Ejercicio 4:** Plataforma de registro y enrutamiento de Tickets (POO y CRUD).
     """)
 
 # ==========================================
-# SECCIÓN: EJERCICIO 1 - FLUJO DE CAJA (PRESUPUESTO TI)
+# SECCIÓN: EJERCICIO 1 - FLUJO DE CAJA (CAJA CHICA SOPORTE)
 # ==========================================
 elif menu == "Ejercicio 1":
-    st.title("💸 Ejercicio 1 – Control de Presupuesto TI (Flujo de Caja)")
-    st.markdown("Registro de asignaciones presupuestales y gastos operativos (OPEX/CAPEX).")
+    st.title("💵 Ejercicio 1 – Control de Caja Chica (Help Desk)")
+    st.markdown("Registro de fondos para movilidad de técnicos a tiendas y compras menores de urgencia.")
 
     col1, col2, col3 = st.columns(3)
     with col1:
-        concepto = st.text_input("Concepto (Ej: Compra Laptops, Asignación Q1)")
+        concepto = st.text_input("Concepto (Ej: Taxi a Tienda San Isidro, Compra de Patch Cord)")
     with col2:
-        # Adaptamos Ingreso/Gasto al lenguaje financiero de TI
-        tipo = st.selectbox("Tipo de Movimiento", ["Ingreso (Presupuesto Asignado)", "Gasto (Compra/Pago)"])
+        tipo = st.selectbox("Tipo de Movimiento", ["Ingreso (Reembolso/Asignación)", "Gasto (Salida de dinero)"])
     with col3:
-        valor = st.number_input("Monto ($)", min_value=0.0, step=100.0)
+        valor = st.number_input("Monto (S/)", min_value=0.0, step=10.0)
 
-    if st.button("Registrar Movimiento"):
+    if st.button("Registrar en Caja Chica"):
         if concepto != "":
-            nuevo_movimiento = {"Concepto": concepto, "Tipo": tipo, "Valor": valor}
-            st.session_state.movimientos_ej1.append(nuevo_movimiento)
-            st.success("Registro añadido a la contabilidad de TI.")
+            nuevo_movimiento = {"Concepto": concepto, "Tipo": tipo, "Monto": valor}
+            st.session_state.caja_chica_ej1.append(nuevo_movimiento)
+            st.success("Movimiento registrado en la caja chica de soporte.")
         else:
-            st.error("Por favor, ingresa un concepto válido.")
+            st.error("Por favor, ingresa el concepto del gasto o ingreso.")
 
-    if len(st.session_state.movimientos_ej1) > 0:
-        st.subheader("Libro Mayor de TI")
-        st.dataframe(st.session_state.movimientos_ej1, use_container_width=True)
+    if len(st.session_state.caja_chica_ej1) > 0:
+        st.subheader("Registro de Movimientos")
+        st.dataframe(st.session_state.caja_chica_ej1, use_container_width=True)
 
-        # Filtramos por el texto exacto del selectbox para calcular los totales
-        total_ingresos = sum(m["Valor"] for m in st.session_state.movimientos_ej1 if m["Tipo"] == "Ingreso (Presupuesto Asignado)")
-        total_gastos = sum(m["Valor"] for m in st.session_state.movimientos_ej1 if m["Tipo"] == "Gasto (Compra/Pago)")
+        total_ingresos = sum(m["Monto"] for m in st.session_state.caja_chica_ej1 if m["Tipo"] == "Ingreso (Reembolso/Asignación)")
+        total_gastos = sum(m["Monto"] for m in st.session_state.caja_chica_ej1 if m["Tipo"] == "Gasto (Salida de dinero)")
         saldo_final = total_ingresos - total_gastos
 
         m1, m2, m3 = st.columns(3)
-        m1.metric("Presupuesto Total Asignado", f"${total_ingresos:.2f}")
-        m2.metric("Total Ejecutado (Gastos)", f"${total_gastos:.2f}")
-        m3.metric("Fondo Disponible (Saldo)", f"${saldo_final:.2f}")
+        m1.metric("Fondo Asignado", f"S/ {total_ingresos:.2f}")
+        m2.metric("Gastos Ejecutados", f"S/ {total_gastos:.2f}")
+        m3.metric("Efectivo Disponible", f"S/ {saldo_final:.2f}")
 
         if saldo_final > 0:
-            st.success("🟢 Presupuesto a favor. Hay fondos disponibles para nuevos proyectos.")
+            st.success("🟢 Hay efectivo disponible para atención de emergencias en tienda.")
         elif saldo_final < 0:
-            st.error("🔴 Presupuesto en rojo. Se ha sobregirado la cuenta de TI.")
+            st.error("🔴 ¡Alerta! La caja chica está sobregirada. Solicitar reembolso urgente.")
         else:
-            st.warning("🟡 Presupuesto al límite (Saldo cero).")
+            st.warning("🟡 Caja chica en cero. No se pueden autorizar más pasajes o compras.")
 
 # ==========================================
-# SECCIÓN: EJERCICIO 2 - ARRAYS Y PANDAS (INVENTARIO TI)
+# SECCIÓN: EJERCICIO 2 - ARRAYS Y PANDAS (INVENTARIO DE REPUESTOS)
 # ==========================================
 elif menu == "Ejercicio 2":
-    st.title("📦 Ejercicio 2 – Despliegue de Hardware (NumPy y Pandas)")
-    st.markdown("Registro de equipos tecnológicos enviados a las sucursales.")
+    st.title("🔌 Ejercicio 2 – Stock de Repuestos Nivel 1")
+    st.markdown("Control rápido de periféricos y partes para envío inmediato a sucursales.")
 
     c1, c2, c3, c4 = st.columns(4)
     with c1:
-        producto = st.text_input("Activo TI (Ej: Lector Zebra, PINPAD)")
+        producto = st.text_input("Repuesto (Ej: Lector de Código de Barras, Mouse, Cable HDMI)")
     with c2:
-        categoria = st.selectbox("Categoría", ["Punto de Venta (POS)", "Redes (AP/Switch)", "Servidores", "Backoffice"])
+        categoria = st.selectbox("Categoría", ["Periféricos POS", "Cables/Conectividad", "Energía", "Redes"])
     with c3:
-        precio = st.number_input("Costo Unitario ($)", min_value=0.0)
+        precio = st.number_input("Costo Unitario Aprox (S/)", min_value=0.0)
     with c4:
-        cantidad = st.number_input("Cantidad enviada", min_value=1, step=1)
+        cantidad = st.number_input("Cantidad en Almacén HD", min_value=1, step=1)
 
-    if st.button("Agregar a la Guía de Remisión"):
+    if st.button("Agregar a Stock"):
         if producto:
             total = precio * cantidad
-            # Creamos un arreglo matemático de NumPy
+            # Uso de NumPy para estructurar los datos matemáticos
             fila_numpy = np.array([producto, categoria, precio, cantidad, total])
-            st.session_state.registros_ej2.append(fila_numpy)
-            st.success("Activo registrado.")
+            st.session_state.repuestos_ej2.append(fila_numpy)
+            st.success("Repuesto ingresado al inventario de Mesa de Ayuda.")
 
-    if st.session_state.registros_ej2:
-        st.subheader("Tabla de Activos Desplegados")
-        # Convertimos la matriz de NumPy a un DataFrame de Pandas
-        columnas = ["Activo TI", "Categoría", "Costo Unitario", "Cantidad", "Inversión Total"]
-        df_registros = pd.DataFrame(st.session_state.registros_ej2, columns=columnas)
+    if st.session_state.repuestos_ej2:
+        st.subheader("Inventario Disponible en Mesa de Ayuda")
+        columnas = ["Descripción", "Categoría", "Costo Ref.", "Stock", "Valor Total inmovilizado"]
+        df_registros = pd.DataFrame(st.session_state.repuestos_ej2, columns=columnas)
         st.dataframe(df_registros, use_container_width=True)
 
 # ==========================================
-# SECCIÓN: EJERCICIO 3 - FUNCIONES (ESCALAMIENTO)
+# SECCIÓN: EJERCICIO 3 - FUNCIONES (MESA DE AYUDA RETAIL)
 # ==========================================
 elif menu == "Ejercicio 3":
     st.title("🔀 Ejercicio 3 – Funciones (Escalamiento ITSM)")
@@ -159,7 +155,6 @@ elif menu == "Ejercicio 3":
             impacto_inc = st.selectbox("Nivel de Impacto Operativo", ["Alto", "Medio", "Bajo"])
 
         if st.button("Evaluar Prioridad SLA"):
-            # Llamamos a nuestra función importada
             prioridad_res, escalamiento_res = determinar_atencion_y_escalamiento(tipo_inc, impacto_inc)
             
             st.error(f"🚨 **Prioridad de Atención:** {prioridad_res}")
@@ -206,7 +201,6 @@ elif menu == "Ejercicio 4":
                 if id_tk in st.session_state.inventario_ej4:
                     st.error("El número de ticket ya existe.")
                 else:
-                    # Aplicamos la función del Ej3 para autocompletar la Clase
                     prioridad_calc, escala_calc = determinar_atencion_y_escalamiento(tipo_tk, impacto_tk)
                     
                     nuevo_ticket = TicketRetail(id_tk, tienda_tk, tipo_tk, impacto_tk, prioridad_calc, escala_calc, estado_tk)
