@@ -40,12 +40,12 @@ menu = st.sidebar.selectbox(
 # SECCIÓN: HOME
 # ==========================================
 if menu == "Home":
-    st.title("🎧 Portal de Mesa de Ayuda - Retail ITSM")
-    st.subheader("Módulo 1 – Python Fundamentals | Especialización for Analytics")
+    st.title("🎧 Titulo del Proyecto : Portal de Mesa de Ayuda - Retail")
+    st.subheader("Curso : Módulo 1 - Python Fundamentals | Especialización for Analytics")
     
     st.markdown("""
-    **Datos del Estudiante / Especialista:**
-    * **Nombre:** [Tu Nombre Completo]
+    * **Nombre:** JOSE CHRISTIAN CHUNGA MARTINEZ
+    * **Nombre DEL Módulo :** Módulo 1 - Python Fundamentals | Especialización for Analytics
     * **Rol Simulad:** Analista de Mesa de Ayuda / Soporte N1 (Sector Retail)
     * **Año:** 2026
     
