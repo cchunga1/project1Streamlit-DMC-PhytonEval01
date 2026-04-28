@@ -45,8 +45,8 @@ if menu == "Home":
     
     st.markdown("""
     * **Nombre:** JOSE CHRISTIAN CHUNGA MARTINEZ
-    * **Nombre DEL Módulo :** Módulo 1 - Python Fundamentals | Especialización for Analytics
-    * **Rol Simulad:** Analista de Mesa de Ayuda / Soporte N1 (Sector Retail)
+    * **Nombre del Módulo :** Módulo 1 - Python Fundamentals | Especialización for Analytics
+    * **Información general del estudiante :** Ingeniero de Sistemas
     * **Año:** 2026
     
     **Descripción del Proyecto:**
