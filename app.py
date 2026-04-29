@@ -9,15 +9,18 @@ from libreria_clases_proyecto1 import TicketRetail
 
 # Importamos la librería PIL (Python Imaging Library) para cargar y manipular imágenes
 from PIL import Image
+#----------------Importación Multimedia------------------------------#
+# Cargamos la imagen del Logo de Pythom
+image1 = Image.open('LogoPython.png')
+
+#------------------------------Logo----------------------------------#
+st.sidebar.image(image1, width=300, caption='App Version 3.0')
 
 # ==========================================
 # CONFIGURACIÓN DE LA PÁGINA
 # ==========================================
 st.set_page_config(page_title="Mesa de Ayuda Retail", layout="wide")
 
-#----------------Importación Multimedia------------------------------#
-# Cargamos la imagen del Logo de Pythom
-image1 = Image.open('LogoPython.png')
 
 # ==========================================
 # INICIALIZACIÓN DE VARIABLES DE SESIÓN
