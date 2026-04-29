@@ -201,7 +201,8 @@ elif menu == "Ejercicio 4":
         col_a, col_b = st.columns(2)
         with col_a:
             id_tk = st.text_input("N° Ticket (Ej: INC-1020)")
-            tienda_tk = st.text_input("Tienda Afectada")
+            # tienda_tk = st.text_input("Tienda Afectada") Si quiero colocar solo texto
+            tienda_tk = st.selectbox("Tienda Afectada", ["Tienda Miraflores", "Tienda SJL" , "Tienda Pueblo Libre" , "Tienda Comas"])
             estado_tk = st.selectbox("Estado Inicial", ["Abierto", "En Revisión"])
         with col_b:
             tipo_tk = st.selectbox("Tipo de Incidente", [
