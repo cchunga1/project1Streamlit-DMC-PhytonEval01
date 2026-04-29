@@ -64,6 +64,7 @@ if menu == "Home":
     * **Información general del estudiante :** Ingeniero de Sistemas
     * **Año:** 2026
     * **Tecnologías utilizadas:** Pandas , Numpy , PIL , Streamlit
+    * **URL del Proyecto :** https://project1app-dmc-phytoneval01-test.streamlit.app/
     
     **Descripción del Proyecto:**
     Esta plataforma simula las herramientas diarias utilizadas por una Mesa de Ayuda en una empresa de Retail, 
