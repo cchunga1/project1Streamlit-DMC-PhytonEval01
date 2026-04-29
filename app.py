@@ -59,10 +59,8 @@ if menu == "Home":
     * **Ejercicio 4:** Plataforma de registro y enrutamiento de Tickets (POO y CRUD).
     """)
 
-# URL Raw de GitHub
 url_imagen = "https://github.com/cchunga1/project1Streamlit-DMC-PhytonEval01/blob/main/Logo%20Python.png"
 
-# Mostrar la imagen en la interfaz
 st.image(url_imagen, caption="Descripción de la imagen", use_column_width=True)
 
 # ==========================================
