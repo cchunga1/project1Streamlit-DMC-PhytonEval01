@@ -14,7 +14,7 @@ from PIL import Image
 image1 = Image.open('LogoPython.png')
 
 #------------------------------Logo----------------------------------#
-st.sidebar.image(image1, width=300, caption='App Version 3.0')
+st.sidebar.image(image1, width=300, caption='App Version 1.0')
 
 # ==========================================
 # CONFIGURACIÓN DE LA PÁGINA
