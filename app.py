@@ -20,7 +20,7 @@ image1 = Image.open('LogoPython.png')
 url_imagen = "https://github.com/cchunga1/project1Streamlit-DMC-PhytonEval01/blob/d0abb218d39f49d5a77b1263cc4cea1870558b9f/LogoPython.png"
 
 # Mostrar la imagen en la interfaz
-st.image(url_imagen, caption="Descripción de la imagen", use_column_width=True)
+st.image(url_imagen, caption="Descripción de la imagen", use_column_width=False)
 
 # ==========================================
 # CONFIGURACIÓN DE LA PÁGINA
