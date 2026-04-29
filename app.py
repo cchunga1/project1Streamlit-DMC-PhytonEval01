@@ -12,6 +12,10 @@ from libreria_clases_proyecto1 import TicketRetail
 # ==========================================
 st.set_page_config(page_title="Mesa de Ayuda Retail", layout="wide")
 
+#----------------Importación Multimedia------------------------------#
+# Cargamos la imagen del Logo de Pythom
+image1 = Image.open('LogoPython.png')
+
 # ==========================================
 # INICIALIZACIÓN DE VARIABLES DE SESIÓN
 # ==========================================
