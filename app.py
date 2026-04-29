@@ -57,12 +57,7 @@ if menu == "Home":
     * **Ejercicio 2:** Inventario de repuestos de primera línea (NumPy y DataFrames).
     * **Ejercicio 3:** Matriz de priorización de incidentes en tiendas (Funciones).
     * **Ejercicio 4:** Plataforma de registro y enrutamiento de Tickets (POO y CRUD).
-    """)
-
-url_imagen = "https://github.com/cchunga1/project1Streamlit-DMC-PhytonEval01/blob/main/Logo%20Python.png"
-
-st.image(url_imagen, caption="Descripción de la imagen", use_column_width=True)
-
+    """
 # ==========================================
 # SECCIÓN: EJERCICIO 1 - FLUJO DE CAJA (CAJA CHICA SOPORTE)
 # ==========================================
