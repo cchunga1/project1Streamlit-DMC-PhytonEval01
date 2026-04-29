@@ -1,8 +1,5 @@
 # ==========================================
-# OBSERVACIÓN PARA EL ALUMNO:
-# La clase TicketRetail abstrae un incidente de la vida real.
-# Centraliza todos los datos del problema y nos da "métodos" (acciones)
-# para modificar su estado o escalarlo a otros equipos técnicos.
+# Libreria de Clases utilizadas - CC
 # ==========================================
 
 class TicketRetail:
