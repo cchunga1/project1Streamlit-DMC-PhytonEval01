@@ -33,7 +33,7 @@ if 'inventario_ej4' not in st.session_state:
 st.sidebar.title("Menú Help Desk")
 menu = st.sidebar.selectbox(
     "Selecciona un módulo:",
-    ["Home", "Ejercicio 1", "Ejercicio 2", "Ejercicio 3", "Ejercicio 4", "Ejercicio 5"]
+    ["Home", "Ejercicio 1", "Ejercicio 2", "Ejercicio 3", "Ejercicio 4"]
 )
 
 # ==========================================
