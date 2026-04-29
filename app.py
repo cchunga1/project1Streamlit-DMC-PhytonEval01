@@ -16,6 +16,12 @@ image1 = Image.open('LogoPython.png')
 #------------------------------Logo----------------------------------#
 st.sidebar.image(image1, width=300, caption='App Version 1.0')
 
+# URL Raw de GitHub
+url_imagen = "https://github.com/cchunga1/project1Streamlit-DMC-PhytonEval01/blob/d0abb218d39f49d5a77b1263cc4cea1870558b9f/LogoPython.png"
+
+# Mostrar la imagen en la interfaz
+st.image(url_imagen, caption="Descripción de la imagen", use_column_width=True)
+
 # ==========================================
 # CONFIGURACIÓN DE LA PÁGINA
 # ==========================================
