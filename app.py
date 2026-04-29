@@ -21,7 +21,6 @@ st.sidebar.image(image1, width=300, caption='App Version 1.0')
 # ==========================================
 st.set_page_config(page_title="Mesa de Ayuda Retail", layout="wide")
 
-
 # ==========================================
 # INICIALIZACIÓN DE VARIABLES DE SESIÓN
 # ==========================================
@@ -58,6 +57,7 @@ if menu == "Home":
     * **Nombre del Módulo :** Módulo 1 - Python Fundamentals | Especialización for Analytics
     * **Información general del estudiante :** Ingeniero de Sistemas
     * **Año:** 2026
+    * **Tecnologías utilizadas:** Python , Streamlit
     
     **Descripción del Proyecto:**
     Esta plataforma simula las herramientas diarias utilizadas por una Mesa de Ayuda en una empresa de Retail, 
