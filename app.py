@@ -245,7 +245,7 @@ elif menu == "Ejercicio 4":
             with c_upd1:
                 nuevo_estado = st.selectbox("Actualizar Estado a:", ["Abierto", "En Revisión", "Escalado", "Resuelto"])
             with c_upd2:
-                nuevo_escala = st.selectbox("Modificar Nivel de Soporte:", ["Nivel 1 (Mesa de Ayuda)", "Nivel 2 (Especialistas)", "Nivel 3 (Vendor/Proveedores)"])
+                nuevo_escala = st.selectbox("Modificar Nivel de Soporte:", ["Nivel 1 (Mesa de Ayuda)", "Nivel 2 (Especialistas)", "Nivel 3 (Soporte Externo)"])
             
             if st.button("Guardar Cambios de Gestión"):
                 ticket_obj = st.session_state.inventario_ej4[id_a_modificar]
