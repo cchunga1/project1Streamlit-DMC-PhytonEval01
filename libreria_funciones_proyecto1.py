@@ -1,9 +1,5 @@
 # ==========================================
-# OBSERVACIÓN PARA EL ALUMNO:
-# Esta función actúa como el "Cerebro" de nuestra Mesa de Ayuda.
-# Evalúa el tipo de incidente del catálogo de servicios y su impacto
-# para determinar automáticamente qué tan urgente es (Prioridad) 
-# y a qué equipo técnico debe derivarse (Nivel de Escalamiento).
+# Aqui se declaran las funciones usadas para la matriz del catalogo de Servicios
 # ==========================================
 
 def determinar_atencion_y_escalamiento(tipo_incidente, impacto):
@@ -17,7 +13,7 @@ def determinar_atencion_y_escalamiento(tipo_incidente, impacto):
     # Matriz de decisión basada en el Catálogo de Servicios
     if tipo_incidente == "Error de la aplicación del sistema de ventas":
         if peso == 3:
-            return "Crítica (Afecta Facturación)", "Nivel 3 (Soporte de Desarrollo/Vendor)"
+            return "Crítica (Afecta Facturación)", "Nivel 3 (Soporte de Desarrollo)"
         elif peso == 2:
             return "Alta (Falla Parcial de Cajas)", "Nivel 2 (Soporte Sistemas Interno)"
         else:
