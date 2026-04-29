@@ -23,6 +23,7 @@ class TicketRetail:
 
     def obtener_diccionario(self):
         # Transforma el objeto en un formato fácil de leer para Pandas (Tablas)
+        # Campos básicos para generar un ticket
         return {
             "ID Ticket": self.id_ticket,
             "Tienda": self.tienda,
