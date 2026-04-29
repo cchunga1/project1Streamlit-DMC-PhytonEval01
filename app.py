@@ -57,7 +57,7 @@ if menu == "Home":
     * **Ejercicio 2:** Inventario de repuestos de primera línea (NumPy y DataFrames).
     * **Ejercicio 3:** Matriz de priorización de incidentes en tiendas (Funciones).
     * **Ejercicio 4:** Plataforma de registro y enrutamiento de Tickets (POO y CRUD).
-    """
+    """)
 # ==========================================
 # SECCIÓN: EJERCICIO 1 - FLUJO DE CAJA (CAJA CHICA SOPORTE)
 # ==========================================
