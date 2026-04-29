@@ -7,6 +7,9 @@ import numpy as np
 from libreria_funciones_proyecto1 import determinar_atencion_y_escalamiento
 from libreria_clases_proyecto1 import TicketRetail
 
+# Importamos la librería PIL (Python Imaging Library) para cargar y manipular imágenes
+from PIL import Image
+
 # ==========================================
 # CONFIGURACIÓN DE LA PÁGINA
 # ==========================================
