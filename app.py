@@ -63,7 +63,7 @@ if menu == "Home":
     * **Nombre del Módulo :** Módulo 1 - Python Fundamentals | Especialización for Analytics
     * **Información general del estudiante :** Ingeniero de Sistemas
     * **Año:** 2026
-    * **Tecnologías utilizadas:** Python , Streamlit
+    * **Tecnologías utilizadas:** Pandas , Numpy , PIL , Streamlit
     
     **Descripción del Proyecto:**
     Esta plataforma simula las herramientas diarias utilizadas por una Mesa de Ayuda en una empresa de Retail, 
